@@ -1,0 +1,1148 @@
+/*
+    Created by: Christina Castillo - 1002170996
+    Created on: 3/26/2024
+    Updated on: 4/4/2024
+    Project: Midterm Practical
+*/
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Rubik:ital@0;1&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css');
+
+:root {
+    /* Grid */
+	 --p: 1.618rem;
+	
+    --number-of-columns: 12;
+    --column-width: calc(100% / var(--number-of-columns));
+    --col-1: calc(var(--column-width) * 1);
+    --col-2: calc(var(--column-width) * 2);
+    --col-3: calc(var(--column-width) * 3);
+    --col-4: calc(var(--column-width) * 4);
+    --col-5: calc(var(--column-width) * 5);
+    --col-6: calc(var(--column-width) * 6);
+    --col-7: calc(var(--column-width) * 7);
+    --col-8: calc(var(--column-width) * 8);
+    --col-9: calc(var(--column-width) * 9);
+    --col-10: calc(var(--column-width) * 10);
+    --col-11: calc(var(--column-width) * 11);
+    --col-12: calc(var(--column-width) * 12);
+
+	/*Typography*/
+	--font-size: 18px;
+	--scale: 1.5;
+	--line-height: calc(1em * var(--scale));
+	--h4: 1rem;
+	--h3: calc(1rem * var(--scale));
+	--h2: calc(var(--h3) * var(--scale));
+	--h1: calc(var(--h2) * var(--scale));
+
+    /* Branding */
+    --primary: rgb(57, 159, 65);
+    --primary-hover: rgb(54, 182, 35);
+    --secondary: hsl(0, 0%, 100%);
+    --secondary-hover: rgb(185, 156, 225);
+    --tertiary: rgb(90, 10, 90);
+    --tertiary-hover: rgb(178, 118, 252);
+    --font-color: #1d1d1d;
+
+    --gray-0: #222222;
+    --gray-1: #666666;
+    --gray-2: #999999;
+    --gray-3: #dadada;
+
+    --white: white;
+
+}
+
+html {
+	font-size: var(--font-size);
+    background-color: #fffff1;
+}
+
+* {
+    box-sizing: border-box;
+    position: relative;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+
+}
+
+/* Images */
+img {
+    max-width: 100%;
+    }
+
+
+/* End of Images */
+
+/* TASK: Paste your typography styles here */
+/* Typography */
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+	font-family: "Rubik", "Lora", "Verdana", sans-serif;
+	font-weight: 600;	
+}
+
+
+h1, .h1 {
+	font-size: var(--h1);
+}
+
+h2, .h2 {
+	font-size: var(--h2);
+}
+
+.textcenter {
+    text-align: center;
+}
+
+h3, .h3 {
+	font-size: var(--h3);
+}
+
+h4, .h4 {
+	font-size: var(--h4);
+}
+
+p {
+    font-family: "Rubik", "Lora", "Verdana", sans-serif;
+}
+
+a {
+    font-family: "Rubik", "Lora", "Verdana", sans-serif;
+}
+
+
+/* Navigation Styles */
+.navbar {
+	display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: flex-start;
+    background-color: rgb(90, 10, 90);
+    color: var(--white);
+    padding-right: 20px;
+    padding-left: 20px;
+}
+.navbar-brand {
+	flex: 0 0 20rem;
+	display: block;
+    overflow: hidden;
+    background: url(../images/cchhh.png) no-repeat left/contain transparent;
+    width: 30rem;
+    height: 6rem;
+    text-indent: -9999px;
+    text-decoration: none;
+}
+
+.navbar-toggler {
+	background-color: var(--primary);
+    border: 0 none;
+    color: white;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+	font-size: 1rem;
+	cursor: pointer;
+}
+
+.navigation {
+	flex: 0 0 100%;
+}
+.navigation.collapse .navbar-nav {
+    display: none;
+}
+
+.dropdown.collapse .dropdown-menu {
+    display: none;
+}
+
+
+.navbar-nav {
+	list-style-type: none;
+    padding: 0;
+}
+
+.navbar-nav li > a {
+	color: var(--white);
+    display: block;
+    overflow: hidden;
+    padding: calc((1em / var(--scale)) / var(--scale)) calc(1em / var(--scale));
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+}
+.navbar-nav li.active > a {
+	border-bottom-color: var(--gray-0);
+	border-bottom: 2px solid var(--primary);
+}
+.navbar-nav li > a:hover {
+    background-color: var(--white);
+    color: var(--white);
+}
+.dropdown-toggle::after {
+	content: "\f077";
+    font-family: "FontAwesome";
+    font-weight: 400;
+    margin-left: var(--line-height);
+}
+.collapse .dropdown-toggle::after {
+    content: "\f078";
+}
+
+.dropdown.collapse .dropdown-menu {
+    display: none;
+}
+.dropdown-menu {
+    background-color: var(--gray-0);
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+    /* This fixes the issue with the menu not being clickable when you expand it on desktop */
+    z-index: 1;
+}
+
+.dropdown-menu > a {
+    flex: 1 0 100%;
+    color: var(--white);
+    padding: calc((1em / var(--scale)) / var(--scale)) calc(1em / var(--scale));
+    text-decoration: none;
+}
+
+.dropdown-menu > a:hover {
+    background-color: var(--secondary-hover);
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+    border-width: 0;
+}
+/*for desktop*/
+@media screen and (min-width: 768px){
+    .navbar-toggler {
+        display: none;
+    }
+
+    .navigation {
+        flex: 0 0 auto;
+    }
+
+    .navigation.collapse .navbar-nav,
+    .navbar-nav {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: flex-end;
+        align-items: baseline;
+        align-content: center;
+    }
+
+    .dropdown-menu {
+        position: absolute;
+    }
+}
+
+@media screen and (max-width: 576px){
+    .navbar-brand {
+        flex: 0 0 10rem;
+        display: block;
+        overflow: hidden;
+        background: url(../images/cchhh.png) no-repeat left/contain transparent;
+        width: 30rem;
+        height: 6rem;
+        text-indent: -9999px;
+        text-decoration: none;
+    }
+}
+
+
+/* End of Navigation Styles */
+
+/* Footer Styles */
+footer {
+    margin-top: 3rem;
+    font-size: calc(1rem / var(--scale));
+    background-color: var(--tertiary);
+    color: var(--white);
+}
+
+footer h3,
+footer h4 {
+    margin-bottom: calc(1rem / var(--scale));
+}
+
+footer .footer-nav {
+    margin: 0;
+}
+
+footer .footer-nav a {
+    display: block;
+    overflow: hidden;
+    padding: calc((1em / var(--scale)) / var(--scale) / var(--scale)) calc(1em / var(--scale) / var(--scale));
+    color: var(--white);
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+}
+
+footer .footer-nav a:hover {
+    color: var(--primary-hover);
+    border-bottom-color: var(--primary-hover);
+}
+
+footer .form-group label {
+    margin-top: 0;
+}
+
+footer .copyright {
+    background-color: var(--gray-4);
+    text-align: center;
+    padding-bottom: 1rem;
+}
+
+footer p,
+footer .social-media {
+    margin: 0;
+    max-width: 100%;
+    width: 100%;
+}
+
+footer .social-media {
+    justify-content: flex-end;
+}
+
+footer .social-media a {
+    display: block;
+    overflow: hidden;
+    color: var(--white);
+}
+
+@media screen and (min-width: 768px){
+    footer .copyright {
+        text-align: unset;
+    }
+
+    footer .social-media {
+        justify-content: flex-end;
+        align-items: flex-end;
+        align-content: flex-end;
+    }
+}
+/* End of Footer Styles */
+
+/* Personal Project Styles */
+
+/* .hero {
+    position: relative;
+} */
+
+.fullscreen-cover {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.fullscreen-cover img {
+    position: absolute;
+    object-position: center;
+	min-width: 100%;
+	min-height: 100%;
+	aspect-ratio: 16 / 9;
+	object-fit: cover;
+}
+
+.fullscreen-cover-text {
+	background-color: hsla(200, 100%, 100%, 0.6);
+	border-radius: 10px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin-bottom: var(--line-height);
+}
+
+.fullscreen-cover-text p {
+	padding: 0 20px 40px 20px;
+}
+
+.fullscreen-cover h1 {
+    margin-bottom: 0;
+}
+.center-content {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+	margin-top: 40px;
+}
+
+.full {
+    width: 100%;
+    height: 100%;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 10px;
+    padding-bottom: 4px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1.25rem;
+    background-color: rgb(90, 10, 90);
+
+}
+
+.fullrow {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+    margin-left: -1rem;
+    margin-right: -1rem;
+    align-items: center;
+    align-content: center;
+    color: white;
+    height: 100%;
+}
+
+.article {
+    box-shadow: 2px 2px 20px #bbbbbb;
+}
+
+.description {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+
+/* Blockquotes */
+
+blockquote {
+	font-size: var(--h3);
+    font-family: "Rubik", sans-serif;
+    margin: auto;
+}
+
+blockquote footer {
+	font-size: 1rem;
+    margin-top: 0;
+}
+
+blockquote p:first-of-type::before {
+    content: open-quote;
+}
+
+blockquote p:last-of-type::after {
+    content: close-quote;
+}
+
+blockquote footer::before {
+	content: "\2014";
+	margin-right: calc(.25rem * var(--scale));
+}
+
+blockquote.text-center { 
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+blockquote.text-right { text-align: right; }
+
+footer.quote {
+    background-color: #f9f9f9;
+}
+
+/* End of Blockquotes */
+
+
+/* List styles */
+
+ul {
+    font-family: "rubik", sans-serif;
+}
+
+ul.unstyled {
+    list-style-type: none;
+    padding-left: 0;
+
+}
+
+ul.inline {
+    list-style-type: none;
+    padding: 0;
+    display: inline-flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: baseline;
+    align-content: flex-start;
+	gap: var(--font-size);
+    
+}
+    
+@media screen and (min-width: 576px){
+    ul.inline {
+        justify-content: flex-end;
+    }
+}
+
+
+/*Definition List*/
+dl {
+    border-left: 4px solid black;
+    padding: var(--line-height);
+    padding-right: 0;
+}
+
+dt {
+    font-weight: bold;
+}
+
+dd {
+    font-style: italic;
+    margin-bottom:  var(--line-height);
+}
+
+dd:last-of-type {
+    margin-bottom: 0;
+}
+/*End of Definition List*/
+
+/* End of List styles */
+
+/* Table Styles */
+table {
+    border-collapse: collapse;
+    border: 1px solid #1f1f1f;
+    width: 100%;
+}
+
+table th,
+table td {
+    padding: calc(var(--table-padding) / 2) var(--table-padding);
+    border: 1px solid #1f1f1f;
+    vertical-align: top;
+}
+
+thead {
+    background-color: #1f1f1f;
+}
+
+thead th {
+    color: white;
+    text-align: left;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #fafafa;
+}
+
+tbody tr:hover {
+    background-color: #efefef;
+}
+
+caption {
+    caption-side: bottom;
+    text-align: left;
+    padding: calc(var(--table-padding) / 2) 0;
+}
+/* End of Table Styles */
+
+
+
+/* Code tag */
+code {
+    font-family: monospace;
+    color: crimson;
+    font-size: 0.75rem;
+    line-height: 1.618em;
+}
+/* End of code tag */
+
+/* Special classes */
+.w-14 {
+    width: 14rem;
+}
+/* End of Special classes */
+
+/* TASK: Paste your grid system here */
+.container-fluid,
+.container {
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1.25rem;
+    margin-bottom: 0;
+}
+
+@media screen and (min-width: 576px){ .container { max-width: 576px; }} /* sm */
+@media screen and (min-width: 768px){ .container { max-width: 768px; }} /* md */
+@media screen and (min-width: 992px){ .container { max-width: 992px; }} /* lg */
+@media screen and (min-width: 1200px){ .container { max-width: 1200px; }} /* xl */
+
+.row {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+    margin-left: -1rem;
+    margin-right: -1rem;
+}
+
+.centerrow {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin-left: -1rem;
+    margin-right: -1rem;
+    text-align: center;
+}
+
+.col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6,
+.col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12,
+.col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6,
+.col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12,
+.col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6,
+.col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12,
+.col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6,
+.col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12,
+.col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6,
+.col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10, .col-xl-11, .col-xl-12 {
+    padding: 0 1rem;
+    width: 100%;
+    max-width: 100%;
+}
+
+.col {
+	flex: 0 0 var(--column-width);
+	width: var(--column-width);
+}
+
+.col-xs-1 {
+    flex: 0 0 var(--col-1);
+    max-width: var(--col-1);
+}
+
+.col-xs-2 {
+    flex: 0 0 var(--col-2);
+    max-width: var(--col-2);
+}
+
+.col-xs-3 {
+    flex: 0 0 var(--col-3);
+    max-width: var(--col-3);
+}
+
+.col-xs-4 {
+    flex: 0 0 var(--col-4);
+    max-width: var(--col-4);
+}
+
+.col-xs-5 {
+    flex: 0 0 var(--col-5);
+    max-width: var(--col-5);
+}
+
+.col-xs-6 {
+    flex: 0 0 var(--col-6);
+    max-width: var(--col-6);
+}
+
+.col-xs-7 {
+    flex: 0 0 var(--col-7);
+    max-width: var(--col-7);
+}
+
+.col-xs-8 {
+    flex: 0 0 var(--col-8);
+    max-width: var(--col-8);
+}
+
+.col-xs-9 {
+    flex: 0 0 var(--col-9);
+    max-width: var(--col-9);
+}
+
+.col-xs-10 {
+    flex: 0 0 var(--col-10);
+    max-width: var(--col-10);
+}
+
+.col-xs-11 {
+    flex: 0 0 var(--col-11);
+    max-width: var(--col-11);
+}
+
+.col-xs-12 {
+    flex: 0 0 var(--col-12);
+    max-width: var(--col-12);
+}
+
+/* Styles for 'col-sm-...' grid */
+@media screen and (min-width: 576px){
+.col-sm-1 {
+    flex: 0 0 var(--col-1);
+    max-width: var(--col-1);
+}
+
+.col-sm-2 {
+    flex: 0 0 var(--col-2);
+    max-width: var(--col-2);
+}
+
+.col-sm-3 {
+    flex: 0 0 var(--col-3);
+    max-width: var(--col-3);
+}
+
+.col-sm-4 {
+    flex: 0 0 var(--col-4);
+    max-width: var(--col-4);
+}
+
+.col-sm-5 {
+    flex: 0 0 var(--col-5);
+    max-width: var(--col-5);
+}
+
+.col-sm-6 {
+    flex: 0 0 var(--col-6);
+    max-width: var(--col-6);
+}
+
+.col-sm-7 {
+    flex: 0 0 var(--col-7);
+    max-width: var(--col-7);
+}
+
+.col-sm-8 {
+    flex: 0 0 var(--col-8);
+    max-width: var(--col-8);
+}
+
+.col-sm-9 {
+    flex: 0 0 var(--col-9);
+    max-width: var(--col-9);
+}
+
+.col-sm-10 {
+    flex: 0 0 var(--col-10);
+    max-width: var(--col-10);
+}
+
+.col-sm-11 {
+    flex: 0 0 var(--col-11);
+    max-width: var(--col-11);
+}
+
+.col-sm-12 {
+    flex: 0 0 var(--col-12);
+    max-width: var(--col-12);
+}
+}
+
+/* Styles for 'col-md-...' grid */
+@media screen and (min-width: 768px){
+.col-md-1 {
+    flex: 0 0 var(--col-1);
+    max-width: var(--col-1);
+}
+
+.col-md-2 {
+    flex: 0 0 var(--col-2);
+    max-width: var(--col-2);
+}
+
+.col-md-3 {
+    flex: 0 0 var(--col-3);
+    max-width: var(--col-3);
+}
+
+.col-md-4 {
+    flex: 0 0 var(--col-4);
+    max-width: var(--col-4);
+}
+
+.col-md-5 {
+    flex: 0 0 var(--col-5);
+    max-width: var(--col-5);
+}
+
+.col-md-6 {
+    flex: 0 0 var(--col-6);
+    max-width: var(--col-6);
+}
+.col-md-7 {
+    flex: 0 0 var(--col-7);
+    max-width: var(--col-7);
+}
+
+.col-md-8 {
+    flex: 0 0 var(--col-8);
+    max-width: var(--col-8);
+}
+
+.col-md-9 {
+    flex: 0 0 var(--col-9);
+    max-width: var(--col-9);
+}
+
+.col-md-10 {
+    flex: 0 0 var(--col-10);
+    max-width: var(--col-10);
+}
+
+.col-md-11 {
+    flex: 0 0 var(--col-11);
+    max-width: var(--col-11);
+}
+
+.col-md-12 {
+    flex: 0 0 var(--col-12);
+    max-width: var(--col-12);
+}
+}
+
+/* Styles for 'col-lg-...' grid */
+@media screen and (min-width: 992px){
+.col-lg-1 {
+    flex: 0 0 var(--col-1);
+    max-width: var(--col-1);
+}
+
+.col-lg-2 {
+    flex: 0 0 var(--col-2);
+    max-width: var(--col-2);
+}
+
+.col-lg-3 {
+    flex: 0 0 var(--col-3);
+    max-width: var(--col-3);
+}
+
+.col-lg-4 {
+    flex: 0 0 var(--col-4);
+    max-width: var(--col-4);
+}
+
+.col-lg-5 {
+    flex: 0 0 var(--col-5);
+    max-width: var(--col-5);
+}
+
+.col-lg-6 {
+    flex: 0 0 var(--col-6);
+    max-width: var(--col-6);
+}
+
+.col-lg-7 {
+    flex: 0 0 var(--col-7);
+    max-width: var(--col-7);
+}
+
+.col-lg-8 {
+    flex: 0 0 var(--col-8);
+    max-width: var(--col-8);
+}
+
+.col-lg-9 {
+    flex: 0 0 var(--col-9);
+    max-width: var(--col-9);
+}
+
+.col-lg-10 {
+    flex: 0 0 var(--col-10);
+    max-width: var(--col-10);
+}
+
+.col-lg-11 {
+    flex: 0 0 var(--col-11);
+    max-width: var(--col-11);
+}
+
+.col-lg-12 {
+    flex: 0 0 var(--col-12);
+    max-width: var(--col-12);
+}
+}
+
+/* Styles for 'col-xl-...' grid */
+@media screen and (min-width: 1200px){
+.col-xl-1 {
+    flex: 0 0 var(--col-1);
+    max-width: var(--col-1);
+}
+
+.col-xl-2 {
+    flex: 0 0 var(--col-2);
+    max-width: var(--col-2);
+}
+
+.col-xl-3 {
+    flex: 0 0 var(--col-3);
+    max-width: var(--col-3);
+}
+
+.col-xl-4 {
+    flex: 0 0 var(--col-4);
+    max-width: var(--col-4);
+}
+
+.col-xl-5 {
+    flex: 0 0 var(--col-5);
+    max-width: var(--col-5);
+}
+
+.col-xl-6 {
+    flex: 0 0 var(--col-6);
+    max-width: var(--col-6);
+}
+
+.col-xl-7 {
+    flex: 0 0 var(--col-7);
+    max-width: var(--col-7);
+}
+
+.col-xl-8 {
+    flex: 0 0 var(--col-8);
+    max-width: var(--col-8);
+}
+
+.col-xl-9 {
+    flex: 0 0 var(--col-9);
+    max-width: var(--col-9);
+}
+
+.col-xl-10 {
+    flex: 0 0 var(--col-10);
+    max-width: var(--col-10);
+}
+
+.col-xl-11 {
+    flex: 0 0 var(--col-11);
+    max-width: var(--col-11);
+}
+
+.col-xl-12 {
+    flex: 0 0 var(--col-12);
+    max-width: var(--col-12);
+}
+}
+
+
+/* TASK: Paste the styles for the Flexbox Assignment: In-Class Practice */
+
+/* Branding */
+.swatch {
+    aspect-ratio: 1;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    border: 1px solid var(--gray-0);
+}
+
+.swatch.primary { background-color: var(--primary) }
+.swatch.primary-hover { background-color: var(--primary-hover) }
+.swatch.secondary { background-color: var(--secondary) }
+.swatch.secondary-hover { background-color: var(--secondary-hover) }
+.swatch.tertiary { background-color: var(--tertiary) }
+.swatch.tertiary-hover { background-color: var(--tertiary-hover) }
+.swatch.font-color { background-color: var(--font-color) }
+.swatch.gray-0 { background-color: var(--gray-0) }
+.swatch.gray-1 { background-color: var(--gray-1) }
+.swatch.gray-2 { background-color: var(--gray-2) }
+.swatch.gray-3 { background-color: var(--gray-3) }
+.swatch.white { background-color: var(--white) }
+
+.swatch.primary,
+.swatch.primary-hover,
+.swatch.secondary,
+.swatch.secondary-hover,
+.swatch.tertiary,
+.swatch.tertiary-hover,
+.swatch.primary,
+.swatch.font-color,
+.swatch.gray-0,
+.swatch.gray-1 {
+    color: var(--white);
+}
+
+/* Button Styles */
+.btn {
+    font-size: 1rem;
+    line-height: var(--line-height);
+    display: inline-block;
+    overflow: hidden;
+    padding: calc(var(--line-height) / var(--scale));
+    padding-left: 40px;
+    padding-right: 40px;
+    background-color: var(--gray-3);
+    text-decoration: none;
+    color: var(--gray-0);
+    border: 2px solid var(--gray-1);
+    cursor: pointer;
+    border-radius: 60px;
+    font-family: "rubik", sans-serif;
+
+}
+
+.btn:hover {
+    background-color: var(--gray-0);
+}
+
+.btn.btn-primary {
+    background-color: var(--primary);
+    color: var(--white);
+}
+
+.btn.btn-primary:hover {
+    background-color: var(--primary-hover);
+}
+
+.btn.btn-secondary {
+    background-color: var(--secondary);
+}
+
+.btn.btn-secondary:hover {
+    background-color: var(--secondary-hover);
+}
+
+.btn.btn-tertiary {
+    background-color: var(--tertiary);
+}
+
+.btn.btn-tertiary:hover {
+    background-color: var(--tertiary-hover);
+}
+
+.btn.btn-sm {
+    font-size: calc(1em / var(--scale));
+}
+
+.btn.btn-lg {
+    font-size: var(--h3);
+}
+/*Form*/
+/* Forms */
+fieldset {
+    padding: var(--line-height);
+    border: 1px solid var(--primary);
+    margin-bottom: var(--line-height);
+}
+
+fieldset legend {
+    color: var(--primary);
+}
+
+.form-group {
+    margin-bottom: var(--line-height);
+    font-family: "rubik", sans-serif;
+}
+
+fieldset .form-group:last-of-type {
+    margin-bottom: 0;
+}
+
+.form-group label {
+    font-weight: bold;
+}
+
+.form-control,
+.form-check-input {
+    accent-color: var(--secondary);
+}
+
+input,
+select,
+textarea {
+    font-family: inherit;
+    font-size: 1rem;
+    line-height: var(--line-height);
+    padding: calc((1em / var(--scale)) / var(--scale) / var(--scale)) calc(1em / var(--scale) / var(--scale));
+    border: 1px solid var(--gray-0);
+    color: var(--font-color);
+}
+
+input.form-control {
+    width: 100%;
+    max-width: 100%;
+}
+
+textarea {
+    width: 100%;
+    max-width: 100%;
+    min-height: calc(4 * var(--line-height));
+}
+
+/* Pseudo Selectors */
+.form-control:focus {
+    outline: var(--secondary-blurred) solid 2px;
+    outline-offset: 2px;
+}
+
+.form-check-input:checked {
+    box-shadow: 0 0 4px 4px var(--secondary-blurred);
+}
+
+.form-control:disabled,
+.form-control:hover:disabled,
+input:disabled,
+input:hover:disabled {
+    background-color: var(--gray-3);
+    color: var(--gray-2);
+    cursor: not-allowed;
+}
+
+input:invalid,
+input:focus:invalid {
+    border-color: red;
+    box-shadow: 0 0 2px red;
+    outline: red solid 2px;
+    outline-offset: 2px;
+}
+
+.fa {
+    color: var(--tertiary);
+}
+
+/* End of Branding */
+
+/*
+    * Window size styles
+    * Do not edit or delete this from examples
+*/
+#windowSize {
+    padding: 0.25rem 0.5rem;
+    background-color: rgba(0,0,0,0.3);
+    color: white;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    user-select: none;
+    z-index: 10;
+}
+/* End of Window size styles */
