@@ -74,6 +74,10 @@ img {
     max-width: 100%;
     }
 
+.grid img {
+    padding-bottom: 10px;
+}
+
 
 /* End of Images */
 
@@ -370,7 +374,7 @@ footer .social-media a {
 }
 
 .fullscreen-cover-text {
-	background-color: hsla(200, 100%, 100%, 0.4);
+	background-color: hsla(200, 100%, 100%, 0.6);
 	border-radius: 10px;
     display: flex;
     flex-flow: column nowrap;
@@ -402,8 +406,8 @@ footer .social-media a {
     height: 100%;
     padding-left: 0;
     padding-right: 0;
-    padding-top: 10px;
-    padding-bottom: 4px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 1.25rem;
@@ -429,11 +433,26 @@ footer .social-media a {
 
 .article {
     box-shadow: 2px 2px 20px #bbbbbb;
+    margin-bottom: 20px;
 }
 
 .description {
     padding-left: 10px;
     padding-right: 10px;
+}
+
+.iconcenter {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.iconcenter p {
+    margin: 0;
+    text-align: center;
+    padding-bottom: 20px;
 }
 
 @media screen and (max-width: 768px){ /* placing image on top md */
@@ -1046,7 +1065,12 @@ code {
 }
 
 .btn.btn-tertiary {
+    font-size: 1rem;
+    line-height: var(--line-height);
+    padding: 5px 20px;
     background-color: var(--tertiary);
+    color: var(--white);
+    margin-bottom: 10px;
 }
 
 .btn.btn-tertiary:hover {
