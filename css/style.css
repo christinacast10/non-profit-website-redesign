@@ -1,8 +1,8 @@
 /*
     Created by: Christina Castillo - 1002170996
-    Created on: 3/26/2024
-    Updated on: 4/4/2024
-    Project: Midterm Practical
+    Created on: 4/8/2024
+    Updated on: 4/30/2024
+    Project: Website Redesign
 */
 @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Rubik:ital@0;1&display=swap');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css');
@@ -338,6 +338,7 @@ footer .social-media a {
 @media screen and (min-width: 768px){
     footer .copyright {
         text-align: unset;
+        padding-top: 10px;
     }
 
     footer .social-media {
@@ -531,8 +532,20 @@ ul.inline {
     ul.inline {
         justify-content: flex-end;
     }
+
 }
 
+@media screen and (max-width: 576px){
+    footer {
+        padding-left: 10px;
+        padding-right: 10px;
+}
+    footer .copyright {
+        padding-top: 10px;
+    }
+
+
+}
 
 /*Definition List*/
 dl {
