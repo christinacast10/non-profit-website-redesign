@@ -456,6 +456,7 @@ footer .social-media a {
     padding-bottom: 20px;
 }
 
+
 @media screen and (max-width: 768px){ /* placing image on top md */
 .order .col-xs-12:nth-child(2) {
     order: -1;
