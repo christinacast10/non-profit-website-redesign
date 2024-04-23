@@ -188,7 +188,7 @@ a {
 	border-bottom: 2px solid var(--primary);
 }
 .navbar-nav li > a:hover {
-    background-color: var(--white);
+    background-color: var(--primary);
     color: var(--white);
 }
 .dropdown-toggle::after {
