@@ -39,9 +39,9 @@
     --primary: rgb(57, 159, 65);
     --primary-hover: rgb(54, 182, 35);
     --secondary: hsl(0, 0%, 100%);
-    --secondary-hover: rgb(185, 156, 225);
+    --secondary-hover: rgb(174, 139, 224);
     --tertiary: rgb(90, 10, 90);
-    --tertiary-hover: rgb(178, 118, 252);
+    --tertiary-hover: rgb(110, 54, 180);
     --font-color: #1d1d1d;
 
     --gray-0: #222222;
@@ -136,7 +136,7 @@ a {
 	flex: 0 0 20rem;
 	display: block;
     overflow: hidden;
-    background: url(../images/cchhh.png) no-repeat left/contain transparent;
+    background: url(../images/cchhhw.png) no-repeat left/contain transparent;
     width: 30rem;
     height: 6rem;
     text-indent: -9999px;
@@ -370,7 +370,6 @@ footer .social-media a {
     object-position: center;
 	min-width: 100%;
 	min-height: 100%;
-	aspect-ratio: 16 / 9;
 	object-fit: cover;
 }
 
@@ -435,6 +434,7 @@ footer .social-media a {
 .article {
     box-shadow: 2px 2px 20px #bbbbbb;
     margin-bottom: 20px;
+    height: auto;
 }
 
 .description {
