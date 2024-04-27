@@ -1113,7 +1113,7 @@ code {
 .btn.btn-lg {
     font-size: var(--h3);
 }
-/*Form*/
+
 /* Forms */
 fieldset {
     padding: var(--line-height);
@@ -1163,6 +1163,22 @@ textarea {
     width: 100%;
     max-width: 100%;
     min-height: calc(4 * var(--line-height));
+}
+
+@media screen and (max-width: 600px) {
+    .form-group {
+        margin-bottom: var(--line-height);
+        font-family: "rubik", sans-serif;
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+}
+
+@media screen and (max-width: 992px){
+    .textmd {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
 }
 
 /* Pseudo Selectors */
